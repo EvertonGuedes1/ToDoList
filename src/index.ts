@@ -1,6 +1,7 @@
 import express from "express";
 import knex from "knex";
 import dotenv from "dotenv";
+import createUser from "./endpoints/createUser";
 
 dotenv.config();
 
@@ -16,7 +17,11 @@ export const connection = knex({
 });
 
 const app = express();
+
 app.use(express.json());
+
+app.put("/user", createUser);
+
 app.listen(3003, () => {
   console.log("servidor rodando na porta 3003");
 });
