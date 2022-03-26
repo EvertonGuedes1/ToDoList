@@ -1,4 +1,4 @@
-import { connection } from "../index";
+import { connection } from "..";
 
 export default async function insertUser(
   id: string,
